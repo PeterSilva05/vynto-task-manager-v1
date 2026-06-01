@@ -1,4 +1,68 @@
 // Code Review - Pedro Arthur Oliveira Silva
+// ==================== CODE REVIEW ====================
+
+// REVIEW 1: Sugestão de arquitetura: aplicar o padrão MVC para separar
+// interface, regras de negócio e persistência de dados.
+
+// REVIEW 2: O arquivo main.js concentra muitas responsabilidades.
+// A divisão em módulos reduziria o acoplamento e facilitaria a manutenção.
+
+// REVIEW 3: Os seletores do DOM poderiam ser agrupados em um objeto,
+// reduzindo a quantidade de variáveis globais.
+
+// REVIEW 4: O uso de muitas variáveis globais aumenta o acoplamento.
+// Um objeto de estado centralizado seria uma alternativa interessante.
+
+// REVIEW 5: A lógica de notificações poderia ser movida para um módulo
+// específico, como ToastService.
+
+// REVIEW 6: Algumas funções possuem múltiplas responsabilidades,
+// o que pode violar o princípio da Responsabilidade Única (SRP).
+
+// REVIEW 7: A função adicionarEventListeners poderia ser dividida em
+// funções menores para melhorar a organização do código.
+
+// REVIEW 8: O processamento de anexos não realiza validação de tamanho
+// ou tipo de arquivo, o que pode impactar segurança e desempenho.
+
+// REVIEW 9: O armazenamento de arquivos em Base64 no localStorage pode
+// atingir rapidamente o limite de armazenamento do navegador.
+
+// REVIEW 10: O uso de innerHTML exige atenção para evitar vulnerabilidades
+// relacionadas a Cross-Site Scripting (XSS).
+
+// REVIEW 11: A criação de IDs utilizando Date.now() funciona,
+// porém crypto.randomUUID() seria uma solução mais robusta.
+
+// REVIEW 12: A função salvarTarefa realiza validação, persistência e
+// atualização da interface. Essas responsabilidades poderiam ser separadas.
+
+// REVIEW 13: A lógica de persistência poderia ser encapsulada em uma
+// camada Repository para facilitar futuras evoluções do sistema.
+
+// REVIEW 14: A função renderizarTarefas mistura filtro, ordenação e
+// renderização, dificultando testes e manutenção.
+
+// REVIEW 15: O padrão Observer poderia ser utilizado para atualizar a
+// interface automaticamente após alterações na lista de tarefas.
+
+// REVIEW 16: O padrão Strategy poderia ser aplicado na implementação
+// dos filtros de tarefas, facilitando futuras expansões.
+
+// REVIEW 17: Existem oportunidades de reutilização de código em alguns
+// trechos relacionados à criação de elementos HTML.
+
+// REVIEW 18: O tratamento de exceções durante o carregamento dos dados
+// está correto, mas mensagens mais amigáveis poderiam ser exibidas ao usuário.
+
+// REVIEW 19: O projeto poderia possuir testes unitários para funções
+// como filtros, formatação de datas e validações.
+
+// REVIEW 20: Como melhoria geral, recomenda-se organizar o projeto em
+// camadas (UI, Services, Repository e Utils), aumentando a escalabilidade
+// e facilitando a manutenção futura do sistema.
+
+// ==================== FIM DO CODE REVIEW ====================
 // ==================== SELETORES ====================
 const btnNovaTarefa = document.querySelector('.btn-nova-tarefa');
 const modal = document.getElementById('modalTarefa');

@@ -62,7 +62,7 @@
 // camadas (UI, Services, Repository e Utils), aumentando a escalabilidade
 // e facilitando a manutenção futura do sistema.
 
-// ==================== FIM DO CODE REVIEW ====================
+
 // ==================== SELETORES ====================
 const btnNovaTarefa = document.querySelector('.btn-nova-tarefa');
 const modal = document.getElementById('modalTarefa');
